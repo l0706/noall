@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    - Result
+{% endblock %}
+
+{% block main %}
+    <div id="bigcontainer" class="container d-flex justify-content-center align-items-center">
+        <div class="row">
+            <div class="col d-flex justify-content-center align-items-center">
+                <div class="text-center">
+                    <img id="image" style="width: 65%;" src="static/neutral.png" class="rounded" alt="Picture of Noall">
+                </div>
+            </div>
+
+            <div class="col d-flex justify-content-center">
+                <div class="text-center">
+                    <p>
+                        <h2 class="fw-lighter" style="padding-bottom: 8%;"><t id="text">{{ answer }}&nbsp;&nbsp;</t>
+                        <button class="btn-answer" id="talkBtn">&#128265;</button></h2>
+                    </p>
+                    <p style="padding-top: 3%;">
+                        <t style="padding-right: 5%;"><button class="btn-custom btn-result btn-good" id="goodBtn"> Thanks, Noall! </button></t>
+                        <button class="btn-custom btn-result btn-bad" id="badBtn"> I don't like your decision </button>
+                    </p>
+                    <p style="padding-top: 10%;">
+                        <button class="btn-custom btn-result btn-home" id="homeBtn" onclick="goHome()"> Home </button>
+                    </p>
+
+                    <script>
+                        function goHome() {
+                            window.speechSynthesis.cancel(); // Stop any speaking in progress
+                            location.href='/'; // Redirect to homepage
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

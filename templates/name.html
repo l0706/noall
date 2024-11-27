@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    - Query
+{% endblock %}
+
+{% block main %}
+    <div id="bigcontainer" class="container d-flex justify-content-center align-items-center">
+        <div class="row">
+            <div class="col d-flex justify-content-center align-items-center">
+                <div class="text-center">
+                    <img style="width: 100%" src="static/noall.png" class="rounded" alt="Picture of Noall">
+                </div>
+            </div>
+
+            <div class="col d-flex justify-content-center">
+                <div class="text-center" style="padding-top: 8%;">
+
+                        <p>
+                            <h2 style="padding-bottom: 8%;">
+                                <t id="text">What's your name?&nbsp;</t>
+                                <button class="btn-answer" id="talkBtn">&#128265;</button>
+                            </h2>
+                        </p>
+
+                        <p>
+                            <form action="/name" method="post">
+                                <t style="padding: 2%;"><input id="name" autocomplete="off" name="name" placeholder="Name" style="padding-left: 4%;" type="name"></t>
+                                <button class="btn btn-custom btn-hi" type="submit" onclick="window.speechSynthesis.cancel()" name="nameBtn" id="hiBtn">Enter</button>
+                            </form>
+                        </p>
+
+                        <p style="padding: 5%;">
+                            {% if error == True %}
+                                <div class="alert alert-danger alert-dismissible fade show" style="border-radius: 35px;" role="alert">
+                                    <strong>Error: </strong> please provide a name
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
+                            {% endif %}
+                        </p>
+
+                        <!-- Back button -->
+                        <p style="padding-top: 9%;"></p>
+                            <button class="btn btn-custom btn-back" onclick="goBack()">Go Back</button>
+                        </p>
+                        <script>
+                            function goBack() {
+                                window.speechSynthesis.cancel();     // Stop any speaking in progress
+                                location.href='/'   // Go to homepage
+                            }
+                        </script>
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

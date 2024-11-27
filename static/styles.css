@@ -1,0 +1,212 @@
+body {
+    background-color: #0b0b0b;
+}
+
+.logo {
+    width: 30%;
+    padding-left: 11%;
+    padding-top: 5%;
+}
+
+.footer {
+    padding-bottom: 2%;
+    color: white;
+}
+
+.me {
+    text-decoration: none; /* Removes default underline */
+    color: inherit; /* Inherit color from parent */
+}
+
+.me:hover {
+    color: inherit;
+    font-weight: bolder; /* Underline on hover */
+}
+
+
+main {
+    text-align: center;
+    font-family: Helvetica;
+    background-color: #0b0b0b;
+    color: white;
+    width: 100%;
+    height: 80vh;
+    overflow: hidden;
+}
+
+#bigcontainer {
+    min-height: 75vh;
+}
+
+.fixed-size {
+    width: 800px;
+    height: 700px;
+}
+
+
+
+/* Custom styles for buttons and inputs */
+
+.btn-custom {
+    border: none;
+    background-color: #fbfbfb;
+    color: #0b0b0b;
+    font-weight: light;
+    transition: background-color 0.5s;
+}
+
+.btn-custom:hover {
+    color: #0b0b0b;
+    background-color: #fbfbfb; /* Darkens the button color on hover */
+}
+
+@keyframes glowing-border {
+    0% {
+        border-color: #89fcfc; /* Start color of the glow */
+        box-shadow: 0 0 40px #89fcfc; /* Start color of the glow */
+    }
+    100% {
+        border-color: #89fcfc; /* End color of the glow */
+        box-shadow: 0 0 80px #89fcfc; /* End color of the glow */
+    }
+}
+
+.btn-hi {
+    width: 107px;
+    height: 40px;
+    border-radius: 20px; /* Makes the buttons rounder */
+    font-size: 18px;
+    border-color: #8af9fa; /* Start color of the glow (green) */
+    box-shadow: 0 0 40px #8af9fa; /* Start color of the glow (green) */
+}
+
+.btn-hi:hover {
+    animation: glowing-border 1.5s infinite alternate; /* Adds transition effect for background color change */
+}
+
+.btn-start {
+    width: 170px; /* Adjust button width as needed */
+    height: 60px; /* Adjust button height as needed */
+    border-radius: 30px; /* Makes the buttons rounder */
+    padding: 5px 20px; /* Adjust button padding */
+    border-color: #8af9fa; /* Start color of the glow (green) */
+    box-shadow: 0 0 40px #8af9fa; /* Start color of the glow (green) */
+}
+
+.btn-start:hover {
+    animation: glowing-border 1.5s infinite alternate; /* Adds transition effect for background color change */
+}
+
+.btn-start span {
+    font-size: 25px; /* Adjust font size of the button text */
+}
+
+.btn-back {
+    width: 130px;
+    height: 40px;
+    border-radius: 20px; /* Makes the buttons rounder */
+    font-size: 18px;
+    border-color: #8af9fa; /* Start color of the glow (green) */
+    box-shadow: 0 0 40px #8af9fa; /* Start color of the glow (green) */
+}
+
+.btn-back:hover {
+    animation: glowing-border 1.5s infinite alternate; /* Adds transition effect for background color change */
+}
+
+.btn-dm {
+    width: 90px;
+    height: 40px;
+    border-radius: 20px; /* Makes the buttons rounder */
+    font-size: 18px;
+    border-color: #8af9fa; /* Start color of the glow (green) */
+    box-shadow: 0 0 40px #8af9fa; /* Start color of the glow (green) */
+}
+
+.btn-dm:hover {
+    animation: glowing-border 1.5s infinite alternate; /* Adds transition effect for background color change */
+}
+
+.btn-result {
+    height: 40px;
+    border-radius: 20px; /* Makes the buttons rounder */
+    font-size: 17px;
+    border-color: #8af9fa; /* Start color of the glow (green) */
+    box-shadow: 0 0 40px #8af9fa; /* Start color of the glow (green) */
+}
+
+.btn-home {
+    font-weight: bolder;
+    width: 80px;
+}
+
+.btn-home:hover {
+    animation: glowing-border 1.5s infinite alternate; /* Adds transition effect for background color change */
+}
+
+.btn-answer {
+    font-size: 23px;
+    background: none; /* Remove background */
+    border: none; /* Remove border */
+    padding: 0; /* Remove padding */
+    cursor: pointer; /* Change cursor to pointer */
+}
+
+.btn-bad {
+    width: 220px;
+    border-color: #ffb3b6;
+    box-shadow: 0 0 40px #ffb3b6;
+}
+
+.btn-bad:hover {
+    animation: glowing-border-red 1.5s infinite alternate; /* Adds transition effect for background color change */
+}
+
+.btn-good {
+    width: 220px;
+}
+
+.btn-good:hover {
+    animation: glowing-border 1.5s infinite alternate; /* Adds transition effect for background color change */
+}
+
+@keyframes glowing-border-red {
+    0% {
+        border-color: #ffb3b6;
+        box-shadow: 0 0 25px #ffb3b6;
+    }
+    100% {
+        border-color: #ffb3b6;
+        box-shadow: 0 0 50px #ffb3b6;
+    }
+}
+
+input[type="number"] {
+    width: 60px;
+    padding: 8px; /* Adjust padding as needed */
+    border-radius: 20px; /* Makes the input box round */
+    border: 7px;
+    border-color: #8af9fa; /* Start color of the glow (green) */
+    box-shadow: 0 0 40px #8af9fa; /* Start color of the glow (green) */
+}
+
+input[type="text"] {
+    width: 220px;
+    padding: 14px; /* Adjust padding as needed */
+    border-radius: 30px; /* Makes the input box round */
+    border: 7px;
+    margin: 2%; /* Add margin between input boxes */
+    border-color: #8af9fa; /* Start color of the glow (green) */
+    box-shadow: 0 0 40px #8af9fa; /* Start color of the glow (green) */
+}
+
+
+input[type="name"] {
+    width: 10vw;
+    padding: 1vh; /* Adjust padding as needed */
+    border-radius: 30px; /* Makes the input box round */
+    border: 7px;
+    margin: 2%; /* Add margin between input boxes */
+    border-color: #8af9fa; /* Start color of the glow (green) */
+    box-shadow: 0 0 40px #8af9fa; /* Start color of the glow (green) */
+}

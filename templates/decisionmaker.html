@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    -  Query
+{% endblock %}
+
+{% block main %}
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 75vh;">
+    <div class="row">
+        <div class="col d-flex justify-content-center align-items-center">
+            <div class="text-center">
+                <img style="width: 65%; height: auto;" src="static/neutral.png" class="rounded" alt="Picture of Noall">
+            </div>
+        </div>
+
+        <div class="col d-flex justify-content-center">
+            <div class="text-center" style="padding-top: 7%;">
+                <!-- step 1: get amount of options, step 2: get the options, step 3: return Noall's decision -->
+
+                <!-- Question -->
+                <p>
+                    <h2 style="padding-bottom: 5%;">
+                        {% if step == 1 %}
+                            <t id="text">How many options does your decision entail?&nbsp;</t>
+                            <button class="btn-answer" id="talkBtn">&#128265;</button>
+                        {% elif step == 2 %}
+                            <t id="text">What are your options concerning your decision?&nbsp;</t>
+                            <button class="btn-answer" id="talkBtn">&#128265;</button>
+                        {% endif %}
+                    </h2>
+                </p>
+
+                <!-- Get user input -->
+                <p>
+                    {% if step == 1 %}
+                        <form id="step1" action="/decisionmaker" method="post">
+                            <s style="padding-right: 3%;"><input id="amount" autocomplete="off" name="amount" placeholder="" type="number"></s>
+                            <button class="btn btn-custom btn-dm" type="submit">Enter</button>
+                        </form>
+                    {% elif step == 2 %}
+                        <form id="step2" action="/decisionmaker" method="post">
+                            {% for i in range(amount) %}
+                                <input autocomplete="off" autofocus required name="option{{ i+1 }}" placeholder="Option {{ i+1 }}" type="text">
+                            {% endfor %}
+                            <p style="padding: 5%;"><button class="btn btn-custom btn-dm" type="submit">Enter</button></p>
+                        </form>
+                    {% endif %}
+                </p>
+
+                <!-- Error message -->
+                {% if error == True %}
+                    <p style="padding: 3%;">
+                        <div class="alert alert-danger alert-dismissible fade show" style="border-radius: 35px;" role="alert">
+                            <strong>Error: </strong>{{ message }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    </p>
+                {% endif %}
+
+                <!-- Back button -->
+                <p style="padding-top: 9%;"></p>
+                    {% if step == 1 %}
+                        <button class="btn btn-custom btn-back" onclick="goBack1()">Go Back</button>
+                    {% elif step == 2 %}
+                        <button class="btn btn-custom btn-back" onclick="goBack2()">Go Back</button>
+                    {% endif %}
+                </p>
+                <script>
+                    function goBack1() {
+                        window.speechSynthesis.cancel();  // Stop any speaking in progress
+                        window.history.back(); // Go back (homepage)
+                    }
+                    function goBack2() {
+                        window.speechSynthesis.cancel();  // Stop any speaking in progress
+                        location.href='/decisionmaker'; // Go to start of decisionmaker
+                    }
+                </script>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

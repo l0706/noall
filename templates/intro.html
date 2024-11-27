@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    - "Hi!"
+{% endblock %}
+
+{% block main %}
+    <div id="bigcontainer" class="container d-flex justify-content-center align-items-center">
+        <div class="row">
+            <div class="col d-flex justify-content-center align-items-center">
+                <div class="text-center">
+                    <img style="width: 100%" src="static/noall.png" class="rounded" alt="Picture of Noall">
+                </div>
+            </div>
+
+            <div class="col d-flex justify-content-center">
+                <div class="text-center" style="padding-top: 8%;">
+                    <p>
+                        <h1 class="fw-light" style="padding-bottom: 40%;">
+                            <t>Hi, {{ username }}!</t>
+                            <t style="display: none;" id="text">{{ greeting }}&nbsp;&nbsp;</t>
+                            <button class="btn-answer" id="talkBtn">&#128265;</button>
+                        </h1>
+                    </p>
+
+                    <p>
+                        <button type="submit" class="btn btn-custom btn-start" name="startBtn" onclick="start();">
+                            <span>▶&nbsp;&nbsp;Start&nbsp;</span>
+                        </button>
+                        <script>
+                            function start() {
+                                window.speechSynthesis.cancel();    // Stop any speech
+                                location.href='/decisionmaker';     // Go to decisionmaker
+                            }
+                        </script>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
