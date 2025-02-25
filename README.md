@@ -2,8 +2,7 @@
 
 
 ####  Video Demo: https://youtu.be/T5shUDup7k
-(in the right directionary, w)
-To run:
+To run (in the right dir):
 > "flask run"
 
 
